@@ -3,117 +3,97 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Виселица — «Ғаламтор» сөзін тап</title>
-<meta name="description" content="Қазақ тіліндегі «Виселица» ойыны. ҒАЛАМТОР сөзін 6 қателікке дейін тауып көріңіз." />
-<meta name="theme-color" content="#070b18" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230b1226'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle' fill='%2322d3ee' font-family='sans-serif'%3EҒ%3C/text%3E%3C/svg%3E" />
+<title>Виселица — Ғаламтор</title>
+<meta name="description" content="Виселица ойыны. ҒАЛАМТОР сөзін әріптеп табыңыз. Қазақ тілінде." />
+<meta name="theme-color" content="#f6f6fb" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%235b4bff'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle' fill='white' font-family='sans-serif'%3EҒ%3C/text%3E%3C/svg%3E" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<div class="stars" aria-hidden="true"></div>
-
-<header class="topbar">
-  <div class="container topbar-inner">
+<header class="header">
+  <div class="container header-inner">
     <a class="brand" href="./">
       <span class="brand-mark" aria-hidden="true">Ғ</span>
-      <span class="brand-text">Ғаламтор <em>ойын</em></span>
+      <span class="brand-name">Ғаламтор</span>
     </a>
-    <div class="score" role="status" aria-live="polite">
-      <span class="score-item"><b id="statWins">0</b> жеңіс</span>
-      <span class="score-sep" aria-hidden="true"></span>
-      <span class="score-item"><b id="statLosses">0</b> жеңіліс</span>
-      <span class="score-sep" aria-hidden="true"></span>
-      <span class="score-item"><b id="statStreak">0</b> қатар</span>
-    </div>
+    <span class="header-note">Ойын</span>
   </div>
 </header>
 
 <main>
-  <section class="container intro">
-    <h1>Виселица: <span class="grad">Ғаламтор</span></h1>
-    <p class="intro-sub">
-      Жасырын сөзді әріптерді таңдау арқылы ашыңыз. <b>6 қателік</b> — және ойын бітеді.
-      Барлық әріпті тапсаңыз — <b>жеңіс</b>!
-    </p>
-  </section>
+  <div class="container">
 
-  <section class="container game">
-    <!-- Сол жақ: сурет -->
-    <div class="panel gallows-panel">
-      <p class="panel-label">Әрекеттер</p>
-      <div class="lives" id="lives" aria-label="Қалған мүмкіндік"></div>
+    <section class="intro">
+      <h1>Виселица</h1>
+      <p>Дар салынбай тұрсын, сөзді әріптеп табыңыз.</p>
+    </section>
 
-      <svg class="gallows" viewBox="0 0 300 300" role="img" aria-label="Виселица суреті">
-        <g class="frame" stroke="url(#frameGrad)" stroke-width="7" stroke-linecap="round" fill="none">
-          <line x1="30" y1="270" x2="230" y2="270" />
-          <line x1="70" y1="270" x2="70" y2="30" />
-          <line x1="70" y1="30" x2="205" y2="30" />
-          <line x1="205" y1="30" x2="205" y2="62" />
-        </g>
-        <g class="body" stroke="#22d3ee" stroke-width="7" stroke-linecap="round" fill="none">
-          <circle class="part p1" cx="205" cy="88" r="26" />
-          <line class="part p2" x1="205" y1="114" x2="205" y2="188" />
-          <line class="part p3" x1="205" y1="134" x2="168" y2="166" />
-          <line class="part p4" x1="205" y1="134" x2="242" y2="166" />
-          <line class="part p5" x1="205" y1="188" x2="172" y2="238" />
-          <line class="part p6" x1="205" y1="188" x2="238" y2="238" />
-        </g>
-        <defs>
-          <linearGradient id="frameGrad" x1="0" y1="0" x2="300" y2="300" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#8b5cf6" /><stop offset="1" stop-color="#3b4b78" />
-          </linearGradient>
-        </defs>
-        <circle class="eye" cx="196" cy="82" r="3.4" fill="#eaf0ff" />
-        <circle class="eye" cx="214" cy="82" r="3.4" fill="#eaf0ff" />
-      </svg>
+    <section class="game" aria-label="Ойын алаңы">
+      <p class="category">Санат: <b>Ғаламтор</b></p>
 
-      <p class="gallows-caption" id="gallowsCaption">Мүмкіндік: 6</p>
-    </div>
+      <div class="play">
+        <div class="draw">
+          <svg class="gallows" viewBox="0 0 260 280" role="img" aria-label="Виселица">
+            <g class="frame" fill="none" stroke="#2b2740" stroke-width="6" stroke-linecap="round">
+              <line x1="24" y1="256" x2="196" y2="256" />
+              <line x1="60" y1="256" x2="60" y2="28" />
+              <line x1="60" y1="28" x2="176" y2="28" />
+              <line x1="176" y1="28" x2="176" y2="56" />
+            </g>
+            <g class="body" fill="none" stroke="#5b4bff" stroke-width="6" stroke-linecap="round">
+              <circle class="part" cx="176" cy="82" r="26" />
+              <line class="part" x1="176" y1="108" x2="176" y2="178" />
+              <line class="part" x1="176" y1="126" x2="140" y2="156" />
+              <line class="part" x1="176" y1="126" x2="212" y2="156" />
+              <line class="part" x1="176" y1="178" x2="144" y2="226" />
+              <line class="part" x1="176" y1="178" x2="208" y2="226" />
+            </g>
+            <g class="part face">
+              <line x1="166" y1="76" x2="171" y2="76" stroke="#2b2740" stroke-width="4" stroke-linecap="round" />
+              <line x1="181" y1="76" x2="186" y2="76" stroke="#2b2740" stroke-width="4" stroke-linecap="round" />
+            </g>
+          </svg>
+          <p class="mistakes">Қате: <b id="mistakeCount">0</b> / 7</p>
+        </div>
 
-    <!-- Оң жақ: сөз + пернетақта -->
-    <div class="panel play-panel">
-      <div class="hint-box">
-        <p class="panel-label">Кеңес</p>
-        <p class="hint" id="hint">—</p>
+        <div class="board">
+          <div class="word" id="word" aria-live="polite"></div>
+          <p class="status" id="status" role="status" aria-live="polite">Сөзді табу үшін әріп таңдаңыз.</p>
+
+          <div class="keyboard" id="keyboard" aria-label="Әліпби"></div>
+
+          <button class="btn" id="restart" type="button" hidden>Қайта ойнау</button>
+        </div>
       </div>
+    </section>
 
-      <div class="word" id="word" aria-live="polite"></div>
+    <section class="rules">
+      <h2>Қалай ойнау керек</h2>
+      <ul>
+        <li>Сөз бос шаршылардың артына жасырылған, тек санаты көрінеді.</li>
+        <li>Әріпті таңдаңыз — ол тұрған барлық шаршыға жазылады.</li>
+        <li>Қате әріп дардың бір бөлігін салады.</li>
+        <li><b>7 бөлік</b> салынса, ойын аяқталады. Барлық әріпті бұрын тапсаңыз — жеңіс.</li>
+      </ul>
+    </section>
 
-      <div class="message" id="message" role="status" aria-live="polite"></div>
+    <section class="about">
+      <h2>Бұл ойын туралы</h2>
+      <p>
+        «Виселица» — қағаз бетінде ойналатын, бәрі білетін сөз ойыны. Бұл нұсқада
+        бір ғана сөз жасырылған: <b>ҒАЛАМТОР</b> — бүкіл әлемді байланыстыратын
+        цифрлық желі. Ойын толығымен қазақ тілінде және тегін.
+      </p>
+    </section>
 
-      <div class="keyboard" id="keyboard" aria-label="Қазақ әріптері"></div>
-
-      <div class="actions">
-        <button class="btn btn-primary" id="nextBtn" type="button">Келесі сөз</button>
-        <button class="btn btn-ghost" id="restartBtn" type="button">Қайта бастау</button>
-        <button class="btn btn-ghost" id="resetStatsBtn" type="button">Есепті тазалау</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="container tips">
-    <div class="tip-card">
-      <h2>Қалай ойнайды?</h2>
-      <ol>
-        <li>Сөз әріптері жасырылған — әр сызық бір әріп.</li>
-        <li>Әріпті экрандағы пернетақтадан немесе өз клавиатураңыздан таңдаңыз.</li>
-        <li>Дұрыс әріп — сөзде ашылады. Қате әріп — виселицаға бір бөлік қосылады.</li>
-        <li><b>6 қателікке</b> жетпей сөзді толық ашсаңыз — <b>сіз жеңдіңіз</b>!</li>
-      </ol>
-    </div>
-    <div class="tip-card highlight">
-      <h2>Негізгі сөз</h2>
-      <p class="big-word">ҒАЛАМТОР</p>
-      <p>8 әріп, кеңес: «Бүкіл әлемді байланыстыратын цифрлық желі». Бұл сөз ойынның басында кездеседі.</p>
-    </div>
-  </section>
+  </div>
 </main>
 
 <footer class="footer">
   <div class="container footer-inner">
-    <p>© <span id="year">2026</span> Ғаламтор ойын · виселица</p>
-    <p>Қазақ тілінде <span aria-hidden="true">🇰🇿</span></p>
+    <p>© <span id="year">2026</span> Ғаламтор</p>
+    <p>Виселица · қазақ тілінде</p>
   </div>
 </footer>
 
