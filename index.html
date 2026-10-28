@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Виселица — Ғаламтор</title>
 <meta name="description" content="Виселица ойыны. ҒАЛАМТОР сөзін әріптеп табыңыз. Қазақ тілінде." />
-<meta name="theme-color" content="#f6f6fb" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%235b4bff'/%3E%3Ctext x='50' y='70' font-size='56' text-anchor='middle' fill='white' font-family='sans-serif'%3EҒ%3C/text%3E%3C/svg%3E" />
-<link rel="stylesheet" href="styles.css" />
+<meta name="theme-color" content="#fbf7ec" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23fdfaf1' stroke='%233b3350' stroke-width='6'/%3E%3Ctext x='50' y='70' font-size='54' text-anchor='middle' fill='%232f4a8a' font-family='Comic Sans MS, cursive'%3EҒ%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
+
+<div class="paper-grain" aria-hidden="true"></div>
 
 <header class="header">
   <div class="container header-inner">
@@ -17,7 +19,7 @@
       <span class="brand-mark" aria-hidden="true">Ғ</span>
       <span class="brand-name">Ғаламтор</span>
     </a>
-    <span class="header-note">Ойын</span>
+    <span class="header-note">ойын</span>
   </div>
 </header>
 
@@ -25,36 +27,56 @@
   <div class="container">
 
     <section class="intro">
-      <h1>Виселица</h1>
-      <p>Дар салынбай тұрсын, сөзді әріптеп табыңыз.</p>
+      <h1>
+        Виселица
+        <svg class="swoosh" viewBox="0 0 240 16" aria-hidden="true" preserveAspectRatio="none">
+          <path d="M3 11c42-6 86-8 234-4" fill="none" stroke="#e0623c" stroke-width="4" stroke-linecap="round" />
+          <path d="M14 14c52-5 120-7 200-5" fill="none" stroke="#e0623c" stroke-width="2" stroke-linecap="round" opacity=".55" />
+        </svg>
+      </h1>
+      <p class="intro-sub">Дар салынбай тұрсын, сөзді әріптеп табыңыз.</p>
     </section>
 
-    <section class="game" aria-label="Ойын алаңы">
-      <p class="category">Санат: <b>Ғаламтор</b></p>
+    <section class="game sketch" aria-label="Ойын алаңы">
+      <span class="tape tape-left" aria-hidden="true"></span>
+      <span class="tape tape-right" aria-hidden="true"></span>
+
+      <p class="category">Санат: <span class="chip">Ғаламтор</span></p>
 
       <div class="play">
         <div class="draw">
-          <svg class="gallows" viewBox="0 0 260 280" role="img" aria-label="Виселица">
-            <g class="frame" fill="none" stroke="#2b2740" stroke-width="6" stroke-linecap="round">
-              <line x1="24" y1="256" x2="196" y2="256" />
-              <line x1="60" y1="256" x2="60" y2="28" />
-              <line x1="60" y1="28" x2="176" y2="28" />
-              <line x1="176" y1="28" x2="176" y2="56" />
+          <svg class="gallows" viewBox="0 0 250 280" role="img" aria-label="Виселица">
+            <!-- ағаш қаңқасы, қолмен сызылғандай -->
+            <g class="frame" fill="none" stroke="#3b3350" stroke-linecap="round">
+              <path d="M20 262c46-3 108-2 178 1" stroke-width="6" />
+              <path d="M22 259c50-2 110-1 174 2" stroke-width="2.5" opacity=".45" />
+              <path d="M58 260c2-84 1-158-1-232" stroke-width="6" />
+              <path d="M55 256c3-78 2-150 0-224" stroke-width="2.5" opacity=".4" />
+              <path d="M57 30c40-3 80-2 122 0" stroke-width="6" />
+              <path d="M59 34c38-2 76-2 118-1" stroke-width="2.5" opacity=".4" />
+              <path d="M177 30c1 10 0 18-1 27" stroke-width="5" />
+              <path d="M173 30c2 9 1 17 0 26" stroke-width="2" opacity=".4" />
             </g>
-            <g class="body" fill="none" stroke="#5b4bff" stroke-width="6" stroke-linecap="round">
-              <circle class="part" cx="176" cy="82" r="26" />
-              <line class="part" x1="176" y1="108" x2="176" y2="178" />
-              <line class="part" x1="176" y1="126" x2="140" y2="156" />
-              <line class="part" x1="176" y1="126" x2="212" y2="156" />
-              <line class="part" x1="176" y1="178" x2="144" y2="226" />
-              <line class="part" x1="176" y1="178" x2="208" y2="226" />
-            </g>
-            <g class="part face">
-              <line x1="166" y1="76" x2="171" y2="76" stroke="#2b2740" stroke-width="4" stroke-linecap="round" />
-              <line x1="181" y1="76" x2="186" y2="76" stroke="#2b2740" stroke-width="4" stroke-linecap="round" />
+
+            <!-- дене бөліктері: 7 -->
+            <g class="body" fill="none" stroke="#2f4a8a" stroke-linecap="round">
+              <circle class="part" cx="176" cy="84" r="25" stroke-width="5" />
+              <path class="part" d="M176 110c1 24 0 46-1 68" stroke-width="5" />
+              <path class="part" d="M175 128c-12 9-24 18-34 27" stroke-width="5" />
+              <path class="part" d="M177 128c12 9 24 18 33 28" stroke-width="5" />
+              <path class="part" d="M175 178c-9 16-20 30-31 46" stroke-width="5" />
+              <path class="part" d="M176 178c9 16 20 30 31 45" stroke-width="5" />
+              <g class="part">
+                <path d="M166 80h5M181 80h5" stroke="#3b3350" stroke-width="3.5" />
+                <path d="M169 93c4 4 10 4 14 0" stroke="#3b3350" stroke-width="3" />
+              </g>
             </g>
           </svg>
-          <p class="mistakes">Қате: <b id="mistakeCount">0</b> / 7</p>
+
+          <div class="mistakes-wrap">
+            <p class="mistakes">Қате: <b id="mistakeCount">0</b> / 7</p>
+            <div class="tally" id="tally" aria-hidden="true"></div>
+          </div>
         </div>
 
         <div class="board">
@@ -68,7 +90,7 @@
       </div>
     </section>
 
-    <section class="rules">
+    <section class="rules lined sketch">
       <h2>Қалай ойнау керек</h2>
       <ul>
         <li>Сөз бос шаршылардың артына жасырылған, тек санаты көрінеді.</li>
@@ -78,7 +100,7 @@
       </ul>
     </section>
 
-    <section class="about">
+    <section class="about sketch">
       <h2>Бұл ойын туралы</h2>
       <p>
         «Виселица» — қағаз бетінде ойналатын, бәрі білетін сөз ойыны. Бұл нұсқада
@@ -97,6 +119,6 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>

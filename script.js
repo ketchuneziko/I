@@ -10,6 +10,7 @@
   var statusEl = document.getElementById("status");
   var keyboardEl = document.getElementById("keyboard");
   var mistakeEl = document.getElementById("mistakeCount");
+  var tallyEl = document.getElementById("tally");
   var restartBtn = document.getElementById("restart");
   var gallowsEl = document.querySelector(".gallows");
   var parts = document.querySelectorAll(".gallows .part");
@@ -21,6 +22,7 @@
 
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------- Пернетақта ---------- */
   function buildKeyboard() {
     keyboardEl.innerHTML = "";
     ALPHABET.forEach(function (letter) {
@@ -35,6 +37,7 @@
     });
   }
 
+  /* ---------- Сөз шаршылары ---------- */
   function renderWord() {
     wordEl.innerHTML = "";
     WORD.split("").forEach(function (letter) {
@@ -49,6 +52,7 @@
     });
   }
 
+  /* ---------- Дар және қате санағы ---------- */
   function renderGallows() {
     parts.forEach(function (part, i) {
       part.classList.toggle("on", i < mistakes);
@@ -56,7 +60,13 @@
     gallowsEl.classList.toggle("dead", mistakes >= MAX_MISTAKES);
   }
 
-  function renderMistakes() {
+  function renderTally() {
+    tallyEl.innerHTML = "";
+    for (var i = 0; i < MAX_MISTAKES; i++) {
+      var mark = document.createElement("span");
+      if (i < mistakes) mark.className = "used";
+      tallyEl.appendChild(mark);
+    }
     mistakeEl.textContent = mistakes;
   }
 
@@ -71,6 +81,7 @@
     });
   }
 
+  /* ---------- Жүріс ---------- */
   function guess(letter) {
     if (over || guessed.indexOf(letter) !== -1) return;
     guessed.push(letter);
@@ -80,19 +91,19 @@
 
     if (correct) {
       if (btn) btn.classList.add("good");
-      setStatus("«" + letter + "» әрпі дұрыс.");
       Array.prototype.forEach.call(wordEl.children, function (slot) {
         if (slot.dataset.letter === letter) {
           slot.textContent = letter;
           slot.classList.add("open");
         }
       });
+      setStatus("«" + letter + "» әрпі дұрыс!");
     } else {
       mistakes += 1;
       if (btn) btn.classList.add("bad");
       renderGallows();
-      renderMistakes();
-      setStatus("«" + letter + "» әрпі жоқ.");
+      renderTally();
+      setStatus("«" + letter + "» әрпі жоқ. Қате: " + mistakes + " / " + MAX_MISTAKES);
     }
 
     if (btn) btn.disabled = true;
@@ -101,22 +112,24 @@
     if (mistakes >= MAX_MISTAKES) return finish(false);
   }
 
+  /* ---------- Аяқтау ---------- */
   function finish(win) {
     over = true;
     Array.prototype.forEach.call(keyboardEl.children, function (btn) { btn.disabled = true; });
 
     if (win) {
       wordEl.classList.add("win");
-      Array.prototype.forEach.call(wordEl.children, function (slot) {
+      Array.prototype.forEach.call(wordEl.children, function (slot, i) {
         slot.textContent = slot.dataset.letter;
         slot.classList.add("open");
+        slot.style.animationDelay = (i * 60) + "ms";
       });
       setStatus("Жеңіс! Сөз: " + WORD, "win");
     } else {
       wordEl.classList.add("lose");
       Array.prototype.forEach.call(wordEl.children, function (slot) {
         slot.textContent = slot.dataset.letter;
-        if (!slot.classList.contains("open")) slot.classList.add("open");
+        slot.classList.add("open");
       });
       setStatus("Ойын аяқталды. Дұрыс сөз: " + WORD, "lose");
     }
@@ -124,6 +137,7 @@
     restartBtn.hidden = false;
   }
 
+  /* ---------- Қайта бастау ---------- */
   function start() {
     guessed = [];
     mistakes = 0;
@@ -132,7 +146,7 @@
     wordEl.className = "word";
     renderWord();
     renderGallows();
-    renderMistakes();
+    renderTally();
     setStatus("Сөзді табу үшін әріп таңдаңыз.", "");
 
     Array.prototype.forEach.call(keyboardEl.children, function (btn) {
