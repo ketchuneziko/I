@@ -1,7 +1,8 @@
-/* Виселица — Ғаламтор */
+/* Жасырын сөз — ойын */
 (function () {
   "use strict";
 
+  // Жасырын сөз (жауап). Ойын барысында экранда көрінбейді.
   var WORD = "ҒАЛАМТОР";
   var MAX_MISTAKES = 7;
   var ALPHABET = "АӘБВГҒДЕЁЖЗИЙКҚЛМНҢОӨПРСТУҰҮФХҺЦЧШЩЪЫІЬЭЮЯ".split("");
@@ -124,14 +125,14 @@
         slot.classList.add("open");
         slot.style.animationDelay = (i * 60) + "ms";
       });
-      setStatus("Жеңіс! Сөз: " + WORD, "win");
+      setStatus("Жеңіс! Сөзді таптыңыз 🎉", "win");
     } else {
       wordEl.classList.add("lose");
       Array.prototype.forEach.call(wordEl.children, function (slot) {
         slot.textContent = slot.dataset.letter;
         slot.classList.add("open");
       });
-      setStatus("Ойын аяқталды. Дұрыс сөз: " + WORD, "lose");
+      setStatus("Ойын аяқталды. Дұрыс сөз жоғарыда ашылды.", "lose");
     }
 
     restartBtn.hidden = false;
