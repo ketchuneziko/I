@@ -17,3 +17,21 @@ python3 -m http.server 8000
 - `script.js` — мобильді мәзір, анимациялар, телефон маскасы және форма валидациясы
 
 Сыртқы кітапханалар қолданылмайды — сайт таза HTML, CSS және JavaScript-тен тұрады.
+
+## Сайтты ашу (жергілікті)
+
+Ең қарапайымы — `index.html` файлын браузерде ашу. Немесе қалтада мынаны іске қосыңыз:
+
+```bash
+python3 -m http.server 8000
+```
+
+## Басқалар да аша алатындай етіп жариялау (GitHub Pages)
+
+1. https://github.com/ketchuneziko/I/settings/pages ашыңыз
+2. **Build and deployment → Source** тармағында **GitHub Actions** таңдаңыз
+3. **Actions** бетіне өтіп, «Сайтты жариялау (GitHub Pages)» жұмысын қайта іске қосыңыз (Re-run all jobs)
+
+Дайын болған соң сайт мына мекенжайда ашылады: **https://ketchuneziko.github.io/I/**
+
+Кез келген жаңа push-тан кейін сайт автоматты түрде жаңарады (`.github/workflows/pages.yml`).
